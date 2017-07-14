@@ -1,7 +1,7 @@
 # configfiles
 
 Add your symlinks to your configfiles to the folder "files". Then add a key to the folder. 
-You can create one with `openssl rand 256 > key`. Then add a script to your cron.daily to automatically update your config scripts in the folder:
+You can create one with `openssl rand 256 > key`. Save it also securely on your local machine. Then add a script to your cron.daily to automatically update your config scripts in the folder:
 ```
 #!/bin/bash
 cd /home/user/configfiles
