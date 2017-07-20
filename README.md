@@ -5,8 +5,11 @@ You can create one with `openssl rand 256 > key`. Save it also securely on your 
 ```
 #!/bin/bash
 cd /home/user/configfiles
+sha512sum files.tar > files.tar.sha512
 ./encrypt.sh
-if [[ $(git status -s) == *"files.tar.sha3-512" ]]; then
+sha512sum -c files.tar.sha512
+if [ $? -eq 1] > /dev/null
+then
     git add *
     git commit -m "new config files"
     git push
